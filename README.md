@@ -12,7 +12,7 @@ Ensure the following are installed on your system:
 - **Kubectl**: Kubernetes command-line tool
 - **Helm**: Kubernetes package manager
 - **Python**: Version 3.x
-- **Python libraries**: `requests`, `kafka-python`, etc.
+- **Python libraries**: `requests`, `confluent-kafka`, etc.
 
 ## Step 1: Install and Start Minikube
 
