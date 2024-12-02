@@ -1,7 +1,5 @@
 # Real-Time-Analytical-System-for-Public-Transit-Monitoring
 
-# Minikube, Apache Kafka, Apache Pinot, and Python Data Pipeline Setup
-
 This README provides instructions to set up and use Minikube, Apache Kafka, Apache Pinot, and Python to ingest data, process it with Kafka, store it in Pinot, and visualize the results.
 
 ## Prerequisites
