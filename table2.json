@@ -1,0 +1,32 @@
+{
+  "tableName": "transit_data",
+  "tableType": "REALTIME",
+  "segmentsConfig": {
+    "timeColumnName": "event_time",
+    "schemaName": "transit_data",
+    "replication": "1",
+    "replicasPerPartition": "1"
+  },
+  "tableIndexConfig": {
+    "loadMode": "MMAP",
+    "streamConfigs": {
+      "streamType": "kafka",
+      "stream.kafka.topic.name": "transit_data_4",
+      "stream.kafka.broker.list": "PLAINTEXT_INTERNAL://kafka-service:29092",
+      "stream.kafka.consumer.type": "simple",
+      "stream.kafka.decoder.class.name": "org.apache.pinot.plugin.stream.kafka.KafkaJSONMessageDecoder",
+      "stream.kafka.consumer.auto.offset.reset": "smallest",
+      "stream.kafka.consumer.prop.fetch.max.wait.ms": "10000",
+      "stream.kafka.consumer.prop.request.timeout.ms": "15000",
+      "stream.kafka.consumer.prop.client.id": "transit_data_4_client_1",
+      "realtime.segment.flush.threshold.rows": "10000",
+      "realtime.segment.flush.threshold.time": "3600000"
+    }
+  },
+  "tenants": {
+    "broker": "DefaultTenant",
+    "server": "DefaultTenant"
+  },
+  "metadata": {}
+}
+

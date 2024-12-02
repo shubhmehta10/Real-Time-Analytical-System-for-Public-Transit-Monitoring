@@ -1,0 +1,68 @@
+{
+  "schemaName": "transit_data",
+  "dimensionFieldSpecs": [
+    {
+      "name": "bus_number",
+      "dataType": "STRING"
+    },
+    {
+      "name": "route_number",
+      "dataType": "STRING"
+    },
+    {
+      "name": "progress_rate",
+      "dataType": "STRING"
+    },
+    {
+      "name": "distance_from_stop",
+      "dataType": "STRING"
+    },
+    {
+      "name": "number_of_stops_away",
+      "dataType": "STRING"
+    },
+    {
+      "name": "latitude",
+      "dataType": "DOUBLE"
+    },
+    {
+      "name": "longitude",
+      "dataType": "DOUBLE"
+    },
+    {
+      "name": "aimed_arrival_time",
+      "dataType": "STRING"
+    },
+    {
+      "name": "expected_arrival_time",
+      "dataType": "STRING"
+    }
+  ],
+  "metricFieldSpecs": [
+    {
+      "name": "estimated_capacity",
+      "dataType": "INT"
+    },
+    {
+      "name": "estimated_count",
+      "dataType": "INT"
+    },
+    {
+      "name": "delay",
+      "dataType": "DOUBLE"
+    },
+    {
+      "name": "availabe_seats",
+      "dataType": "INT"
+    }
+  ],
+  "dateTimeFieldSpecs": [
+    {
+      "name": "event_time",
+      "dataType": "TIMESTAMP",
+      "format": "1:MILLISECONDS:EPOCH",
+      "granularity": "1:MILLISECONDS"
+    }
+  ]
+}
+
