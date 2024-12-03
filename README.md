@@ -62,14 +62,14 @@ Install Pinot in the default namespace using Helm:
 helm install pinot pinot/pinot --namespace default
 ```
 
-## Step 4: Port Forward Pinot Server and Upload Schema and Table
+## Step 4: Port Forward Pinot Controller and Upload Schema and Table
 
-### 4.1 Port Forward Pinot Server
+### 4.1 Port Forward Pinot Contorller
 
 Port forward the Pinot server:
 
 ```bash
-kubectl port-forward svc/pinot-server 9000:9000
+kubectl port-forward svc/pinot-controller 9000:9000
 ```
 
 ### 4.2 Upload Schema
