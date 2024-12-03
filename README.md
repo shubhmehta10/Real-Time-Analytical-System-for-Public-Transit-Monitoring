@@ -23,7 +23,7 @@ Follow the [Minikube installation guide](https://minikube.sigs.k8s.io/docs/start
 Start Minikube using the following command:
 
 ```bash
-minikube start
+minikube start --cpus=4 --memory=7168
 ```
 
 ## Step 2: Deploy Zookeeper and Kafka
@@ -46,15 +46,7 @@ kubectl apply -f kafka-setup.yaml
 
 ## Step 3: Install Apache Pinot Using Helm
 
-### 3.1 Add Pinot Helm Chart Repository
-
-Add the Pinot Helm chart repository if you haven't already:
-
-```bash
-helm repo add pinot https://raw.githubusercontent.com/apache/pinot/master/kubernetes/helm
-```
-
-### 3.2 Install Pinot
+### 3.1 Install Pinot
 
 Install Pinot in the default namespace using Helm:
 
@@ -66,7 +58,7 @@ helm install pinot pinot/pinot --namespace default
 
 ### 4.1 Port Forward Pinot Contorller
 
-Port forward the Pinot server:
+Port forward the Pinot controller:
 
 ```bash
 kubectl port-forward svc/pinot-controller 9000:9000
@@ -74,7 +66,7 @@ kubectl port-forward svc/pinot-controller 9000:9000
 
 ### 4.2 Upload Schema
 
-Upload the schema using the following curl command:
+Open a new terminal and upload the schema using the following curl command:
 
 ```bash
 curl -X POST "http://localhost:9000/schemas" \
@@ -96,7 +88,7 @@ curl -X POST "http://localhost:9000/tables" \
 
 ### 5.1 Port Forward Kafka Service
 
-Port forward the Kafka service:
+Open a new terminal and port forward the Kafka service:
 
 ```bash
 kubectl port-forward svc/kafka-service 9092:9092
@@ -114,7 +106,7 @@ python kafka_data.py
 
 ### 6.1 Port Forward Pinot Broker
 
-Port forward the Pinot broker:
+Open a new terminal and port forward the Pinot broker:
 
 ```bash
 kubectl port-forward svc/pinot-broker 8099:8099
