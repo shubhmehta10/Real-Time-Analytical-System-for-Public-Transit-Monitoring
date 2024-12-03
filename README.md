@@ -1,7 +1,5 @@
 # Real-Time-Analytical-System-for-Public-Transit-Monitoring
 
-# Minikube, Apache Kafka, Apache Pinot, and Python Data Pipeline Setup
-
 This README provides instructions to set up and use Minikube, Apache Kafka, Apache Pinot, and Python to ingest data, process it with Kafka, store it in Pinot, and visualize the results.
 
 ## Prerequisites
@@ -12,7 +10,7 @@ Ensure the following are installed on your system:
 - **Kubectl**: Kubernetes command-line tool
 - **Helm**: Kubernetes package manager
 - **Python**: Version 3.x
-- **Python libraries**: `requests`, `kafka-python`, etc.
+- **Python libraries**: `requests`, `confluent-kafka`, etc.
 
 ## Step 1: Install and Start Minikube
 
@@ -64,14 +62,14 @@ Install Pinot in the default namespace using Helm:
 helm install pinot pinot/pinot --namespace default
 ```
 
-## Step 4: Port Forward Pinot Server and Upload Schema and Table
+## Step 4: Port Forward Pinot Controller and Upload Schema and Table
 
-### 4.1 Port Forward Pinot Server
+### 4.1 Port Forward Pinot Contorller
 
 Port forward the Pinot server:
 
 ```bash
-kubectl port-forward svc/pinot-server 9000:9000
+kubectl port-forward svc/pinot-controller 9000:9000
 ```
 
 ### 4.2 Upload Schema
